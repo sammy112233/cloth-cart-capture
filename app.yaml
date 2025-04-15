@@ -1,0 +1,14 @@
+
+runtime: nodejs18
+service: default
+
+handlers:
+  - url: /static
+    static_dir: dist/static
+    
+  - url: /(.*)
+    static_files: dist/index.html
+    upload: dist/index.html
+
+env_variables:
+  NODE_ENV: "production"
